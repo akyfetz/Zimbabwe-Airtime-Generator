@@ -93,9 +93,10 @@ def Econet():
 	global rec_pin
 	Rech.set("")
 	cd.set(" * 121 *")
-	eco=str(random.randint(00000,99999))
+	ec=str(random.randint(0,9))
+	eco=str(random.randint(000,999))
 	NumGen()
-	ecnt=(" "+"0"*(5-len(eco))+eco+" "+rec_pin+"")
+	ecnt=(" "+"0"*(1-len(ec))+ec+"7"+"0"*(3-len(eco))+eco+" "+rec_pin+"")
 	Rech.set(ecnt)
 	database()
 	cursor.execute("INSERT INTO 'result' (ntwrk_nm, rec_nmbr) VALUES(?, ?)",(  "Econet", ecnt))
